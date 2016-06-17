@@ -1,36 +1,33 @@
-<ion-view view-title="Bem vindo!"  hide-nav-bar="true"   style="background:url(img/img1.jpg) no-repeat center top; background-size:auto 100%">
+<ion-view view-title="Bem vindo!" class="intro"  hide-nav-bar="true" >
         <ion-slide-box on-slide-changed="slideChanged(index)" ng-show="exibe">
           <ion-slide>
             <h3>Bem vindo</h3>
             <div id="logo">
               <img src="img/logo_w.png">
             </div>
-             <p>&nbsp;&nbsp;&nbsp;</p>
-            <p style="font-size:5vw">
+             <div class="spacer" style="width: 100%; height: 5%;"></div>
+            <p>
               Com este aplicativo você saberá mais <br/> sobre o Diabetes  e como manter<br/> sua qualidade de vida.
             </p>
-            <p>&nbsp;&nbsp;&nbsp;</p>
+             <div class="spacer" style="width: 100%; height: 8%;"></div>
               <button class="button button-positive "
                   ng-click="startApp()" ng-show="!slideIndex">
            Pula introdução
           </button>
-           <p>&nbsp;&nbsp;&nbsp;</p>
-            <p>&nbsp;&nbsp;&nbsp;</p>
+         <div class="spacer" style="width: 100%; height: 5%;"></div>
+          
               <button class="button  button-clear button-block button-white"
                   ng-click="NoShow()" ng-show="!slideIndex">
            Não exibir mais
           </button>
           </ion-slide>
-          <ion-slide>
+          <ion-slide class="padding">
             <h3>Com o Guia do Diabético você pode:</h3>
-            
-            <div id="list">
-              <ol>
-                <li>Se informar sobre o Diabetes</li>
-                <li>Obter dicas</li>
-                <li>Acompanhar suas medições de glicose</li>
-              </ol>
-            </div>
+             <p>&nbsp;&nbsp;&nbsp;</p>
+          <p class="text-left "><i class="icon ion-checkmark-circled positive"></i> Se informar sobre o Diabetes</p>
+          <p class="text-left"><i class="icon ion-checkmark-circled positive"></i> Obter dicas</p>
+          <p class="text-left"><i class="icon ion-checkmark-circled positive"></i> Acompanhar suas medições de glicose</p>
+          
           </ion-slide>
           <ion-slide>
             <h3>Viva com saúde!</h3>

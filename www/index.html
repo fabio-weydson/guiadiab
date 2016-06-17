@@ -10,7 +10,9 @@
 <link href="js/chart/angular-chart.css" rel="stylesheet">
   
 <script src="js/chart/chart.js"></script>
-        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+              <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+
     <script src="js/mask.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -22,9 +24,6 @@
 
     
     <link href="css/ionic.app.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open%20Sans%3A400%2C700%2C600" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Cabin%3A400%2C600%2C700" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Josefin%20Sans%3A400%2C600%2C700%2C300%2C100" rel="stylesheet" type="text/css">
     <style type="text/css">
       .platform-ios .manual-ios-statusbar-padding{
         padding-top:20px;
@@ -62,6 +61,10 @@
    <!-- Toggle left side menu -->
    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
+   <ion-nav-buttons side="right">
+   <!-- Toggle left side menu -->
+   <button ui-sref="registro" class="button button-icon icon ion-android-add-circle"></button>
+  </ion-nav-buttons>
 </ion-nav-bar>
         <ion-nav-view has-bouncing="false"></ion-nav-view>
       </ion-pane>
@@ -71,14 +74,14 @@
     </header>
     <ion-content class="has-header sidemenu">
       <ion-list>
-        <ion-item nav-clear="" menu-close="" href="#/app/home">
+        <ion-item nav-clear="" menu-close="" ui-sref="principal">
           Home
         </ion-item>
-        <ion-item nav-clear="" menu-close="" href="#/app/historico">
+        <ion-item nav-clear="" menu-close="" ui-sref="principal">
           Meu Hist&#xF3;rico
         </ion-item>
-        <ion-item nav-clear="" menu-close="" href="#/app/emergencia">
-          Em caso de emerg&#xEA;ncia
+        <ion-item nav-clear="" menu-close="" ui-sref="emergencia">
+          Emerg&#xEA;ncia
         </ion-item>
       </ion-list>
     </ion-content>

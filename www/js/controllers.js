@@ -7,11 +7,13 @@ angular.module('app.controllers', [])
   $scope.graph = {};
   $scope.graph.data = [
     //Awake
-    [16, 15, 20, 12, 16, 12, 8],
-    [15, 20, 12, 16, 12, 8, 12]
+     [120,120,120,120,120,120],
+    [115, 120, 100, 90, 145, 90],
+    [120, 100, 150, 145, 110, 82]
+   
   ];
-  $scope.graph.labels = ['06:00', '10:00', '14:00', '18:00', '22:00', '02:00'];
-  $scope.graph.series = ['Nivel', 'Recomendado'];
+  $scope.graph.labels = ['06:00', '10:00', '14:00', '18:00', '22:00', '00:00'];
+  $scope.graph.series = ['Recomendado', 'Hoje', 'Ontem'];
   $scope.graph.options = {
         scaleShowHorizontalLines: true,
         scaleShowVerticalLines: true,
@@ -67,60 +69,89 @@ $scope.dica = $scope.dicas[0];
    
 })
    
-.controller('registroCtrl', function($scope,$stateParams,$state, $http,registroService) {
-  if(localStorage.getItem('ContinuaRegistro')){
+.controller('registroCtrl', function($scope,$stateParams,$state, $http,registroService,ionicDatePicker) {
+   $scope.getFormattedDate = function(date,type) {
+      var year = date.getFullYear();
+      var month = (1 + date.getMonth()).toString();
+      month = month.length > 1 ? month : '0' + month;
+      var day = date.getDate().toString();
+      day = day.length > 1 ? day : '0' + day;
+      if(type=='human'){
+        return day + '/' + month + '/' + year;
+      } else {
+        return year + '-' + month + '-' + day;
+      }
+    }
+    $scope.minutos = [];
+    for (var i = 0; i <= 59; i++) {
+      if(i<10){
+        v='0'+i;
+      } else {
+        v = i;
+      }
+      $scope.minutos[i] = v;
+    };
+    $scope.horas = [];
+    for (var i = 0; i <= 23; i++) {
+      if(i<10){
+        v='0'+i;
+      } else {
+        v = i;
+      }
+      $scope.horas[i] = v;
+    };
+    var d = new Date();
+    var minutos = d.getMinutes();
+    var horas = d.getHours();
 
-      $scope.registros_offline_local = localStorage.getItem('registros');
-      $scope.registros_offline = JSON.parse($scope.registros_offline_local );
-      $scope.registro_continuar = localStorage.getItem('ContinuaRegistro');
-      $scope.registro = $scope.registros_offline[$scope.registro_continuar];
-      console.log($scope.registro);
-
-  } else {
-	$scope.rand = Math.floor((Math.random() * 999999999999) + 1);
-
-      $scope.registro = {
-        id : $scope.rand,
-        tipo1: $stateParams.TipoCadastro1,
-        tipo2: $stateParams.TipoCadastro2,
-        tipo3: $stateParams.TipoCadastro3,
-        nome: '',
-        email : '',
-        cpf : '',
-        ip: '192.168.0.1',
-        cep: '',
-        data_nascimento: '',
-        ddd: '',
-        celular: '',
-        endereco: '',
-        numero: '',
-        complemento: '',
-        bairro: '',
-        cidade: '',
-        uf: ''
-    };  
-  }
+    if(minutos<10){
+      minutos = '0'+minutos;
+    }
+     if(horas<10){
+      horas = '0'+horas;
+    }
+    $scope.horaAtual = horas;
+    $scope.minutoAtual = minutos;
+    $scope.data_human =  $scope.getFormattedDate(d,'human');
+    $scope.data = $scope.getFormattedDate(new Date(),'machine');
+    $scope.hora = '';
+    $scope.minuto = '';
+    console.log($scope.minutoAtual)
 
 
-    $.ajax({
-              type: "GET",
-              dataType: 'json',
-              url: "http://ipv4.myexternalip.com/json",
-              success: function( data ) {
+  var ipObj1 = {
+      callback: function (val) {  //Mandatory
+       $scope.data = $scope.getFormattedDate(new Date(val));
+       $scope.data_human = $scope.getFormattedDate(new Date(val),'human');
+       console.log($scope.data,$scope.data_human)
+      },
+      disabledDates: [            //Optional
+        new Date(2016, 2, 16),
+        new Date(2015, 3, 16),
+        new Date(2015, 4, 16),
+        new Date(2015, 5, 16),
+        new Date('Wednesday, August 12, 2015'),
+        new Date("08-16-2016"),
+        new Date(1439676000000)
+      ],
+      from: new Date(2012, 1, 1), //Optional
+      to: new Date(2016, 10, 30), //Optional
+      inputDate: new Date(),      //Optional
+      mondayFirst: true,          //Optional
+      disableWeekdays: [0],       //Optional
+      closeOnSelect: false,       //Optional
+      templateType: 'popup',       //Optional,
+      escChar: 'mmHg',
+      clearOnBlur: false
+    };
 
-                        $scope.$apply(function () {
-                        $scope.registro.ip = data.ip;
-                });
-                }
-    });
-  
-  $scope.ContinuaRegistro = function(form) {
-    console.log($scope.registro)
-        registroService.setRegistro($scope.registro);
- 
-        $state.go('endereco', {cep: $scope.registro.cep});
+   $scope.ContinuaRegistro = function(){
+        $scope.resultado = "Registro gravado com sucesso!<p>&nbsp;</p>";
+   }
+    $scope.openDatePicker = function(){
+      ionicDatePicker.openDatePicker(ipObj1);
+    };
 
-  };  
 
 
 })
@@ -403,6 +434,15 @@ $scope.dica = $scope.dicas[0];
 
 })
 
+.controller('duvidasCtrl', function($scope, $stateParams, $state,$http,$ionicLoading,$ionicModal) {
+      
+      $scope.contato = {
+        email : '',
+        nome : '',
+        telefone: '',
+      };  
+
+})
 .controller('guiaCtrl', function($scope, $stateParams, $state,$http,$ionicLoading,$ionicModal) {
 
   $scope.txtid = $stateParams.id;
@@ -430,7 +470,7 @@ $scope.dica = $scope.dicas[0];
   
 
      $ionicLoading.show({
-          template: 'Carregando...'
+          template: 'Aguarde...'
         });
 
     $.ajax({

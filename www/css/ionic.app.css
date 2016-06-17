@@ -10,6 +10,7 @@
   used under CC BY http://creativecommons.org/licenses/by/4.0/
   Modified icons to fit ionicon’s grid from original.
 */
+
 @font-face {
   font-family: "Ionicons";
   src: url("../lib/ionic/fonts/ionicons.eot?v=2.0.1");
@@ -2962,6 +2963,43 @@
 .ion-xbox:before {
   content: ""; }
 
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Josefin Sans Thin'), local('JosefinSans-Thin'), url(../lib/ionic/fonts/q9w3H4aeBxj0hZ8Osfi3d9kWwCWWHt2eabdCtA6ddDc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Josefin Sans'), local('JosefinSans'), url(../lib/ionic/fonts/xgzbb53t8j-Mo-vYa23n5qRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Josefin Sans SemiBold'), local('JosefinSans-SemiBold'), url(../lib/ionic/fonts/C6HYlRF50SGJq1XyXj04zxefZI2gqg-NXpw43Z_DJ3I.woff) format('woff');
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(../lib/ionic/fonts/C6HYlRF50SGJq1XyXj04zxAPw1J91axKNXP_-QX9CC8.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cabin Bold'), local('Cabin-Bold'), url(../lib/ionic/fonts/haOjnueK8Or1ztuuRtr8dnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(../lib/ionic/fonts/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+}
 /**
  * Resets
  * --------------------------------------------------
@@ -3579,11 +3617,12 @@ cite {
   text-align: center; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #000;
+.h1, .h2, .h3, .h4@, .h5, .h6 {
+  color: #666;
   font-weight: 500;
-  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-  line-height: 1.2; }
+  font-family: "-apple-system", "Roboto", "Segoe UI", sans-serif;
+  line-height: 1.2;
+  }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
@@ -3934,9 +3973,9 @@ a.subdued {
     .bar.bar-positive.bar-footer {
       background-image: linear-gradient(180deg, #0c60ee, #0c60ee 50%, transparent 50%); }
   .bar.bar-calm {
-    border-color: #0a9dc7;
+    border-color: #7ccbca;
     background-color: #7ccbca;
-    background-image: linear-gradient(0deg, #0a9dc7, #0a9dc7 50%, transparent 50%);
+    /* background-image: linear-gradient(0deg, #0a9dc7, #0a9dc7 50%, transparent 50%); */
     color: #fff;
     }
     .bar.bar-calm .title {
@@ -4727,10 +4766,10 @@ a.subdued {
   .tabs-striped.tabs-color-calm .tab-item .badge {
     opacity: 0.4; }
   .tabs-striped.tabs-color-calm .tab-item.tab-item-active, .tabs-striped.tabs-color-calm .tab-item.active, .tabs-striped.tabs-color-calm .tab-item.activated {
-    margin-top: -2px;
+    /* margin-top: -2px; */
     color: #FFF;
     border: 0 solid #FFF;
-    border-top-width: 4px;
+    /* border-top-width: 4px; */
     }
     .tabs-striped.tabs-color-calm .tab-item.tab-item-active .badge, .tabs-striped.tabs-color-calm .tab-item.active .badge, .tabs-striped.tabs-color-calm .tab-item.activated .badge {
       top: 2px;
@@ -5069,7 +5108,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   white-space: nowrap;
   font-weight: 400;
   font-size: 14px;
-  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: "-apple-system", "Roboto", "Segoe UI", sans-serif;
   opacity: 0.7; }
   .tab-item:hover {
     cursor: pointer; }
@@ -5223,7 +5262,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   min-height: 100%;
   max-height: 100%;
   width: 275px;
-  background-color: #fff; }
+  }
   .menu .scroll-content {
     z-index: 10; }
   .menu .bar-header {
@@ -6762,9 +6801,11 @@ button.item.item-button-right {
     display: inline-block;
     margin: 0px 3px;
     width: 15px;
-    color: #000;
+    color: #FFF;
     text-decoration: none;
-    opacity: 0.3; }
+    opacity: 0.3;
+    z-index: 9999999;
+    }
     .slider-pager .slider-pager-page.active {
       -webkit-transition: opacity 0.4s ease-in;
       transition: opacity 0.4s ease-in;
@@ -7499,7 +7540,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
+  font-family: "-apple-system", "Roboto", "Segoe UI", sans-serif; }
 
 .item-input {
   display: -webkit-box;
@@ -7516,7 +7557,7 @@ textarea {
   position: relative;
   overflow: hidden;
   padding: 6px 0 5px 16px; }
-  .item-input input {
+  .item-input input,.item-input select {
     -webkit-border-radius: 0;
     border-radius: 0;
     -webkit-box-flex: 1;
@@ -7671,21 +7712,7 @@ textarea {
       -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
       transition: opacity 0.15s ease-in, top 0.2s linear; }
 
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"] {
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"],select {
   display: block;
   padding-top: 2px;
   padding-left: 0;
@@ -7725,21 +7752,7 @@ textarea {
 textarea {
   height: auto; }
 
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"] {
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"],select {
   border: 0; }
 
 input[type="radio"],
@@ -8635,9 +8648,11 @@ progress {
     }
     .button.button-positive:hover {
       color: #fff;
-      text-decoration: none; }
+      text-decoration: none;
+      background: #188685;
+      }
     .button.button-positive.active, .button.button-positive.activated {
-      background-color: #0c60ee; }
+      background-color:#188685; }
     .button.button-positive.button-clear {
       border-color: transparent;
       background: none;
@@ -8766,7 +8781,7 @@ progress {
       background: #e27676;
       }
     .button.button-royal.active, .button.button-royal.activated {
-      background-color: #6b46e5; }
+      background-color: #e27676; }
     .button.button-royal.button-clear {
       border-color: transparent;
       background: none;
@@ -9441,7 +9456,8 @@ a.button {
   border-color: #b2b2b2; }
 
 .positive, a.positive {
-  color: #387ef5; }
+  color: #00bab9;
+  }
 
 .positive-bg {
   background-color: #387ef5; }
@@ -9486,7 +9502,8 @@ a.button {
   border-color: #e6b500; }
 
 .royal, a.royal {
-  color: #886aea; }
+  color: #f27c7d;
+  }
 
 .royal-bg {
   background-color: #886aea; }
@@ -9796,7 +9813,16 @@ body {
   border-bottom: 3px solid green;
 }
 
-
+.intro {
+  background:url(../img/img1.jpg) no-repeat 30% top; 
+  background-size:auto 100%
+}
+@media (min-width: 500px) {
+  .intro {
+  background:url(../img/img1.jpg) no-repeat center top; 
+  background-size:100% auto
+  }
+}
 .slider {
   height: 100%;
 }
@@ -9804,14 +9830,14 @@ body {
     text-shadow: 1px 0px 2px #000 ; 
 }
 .slider p {
-    font-size: 5vw;
+    font-size: 17px;
 }
 .slider-slide {
-  padding-top: 80px;
+  padding-top: 40px;
   color: #FFF;
   text-align: center;
-  background: rgba(0,0,0,0.3);
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  background: rgba(0,0,0,0.5);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
 .slider-slide h3, .slider-slide h2, .slider-slide h3{
@@ -9825,19 +9851,7 @@ body {
 #logo img{
   width: 100%;
 }
-#list {
-  width: 170px;
-  margin: 30px auto;
-  font-size: 20px;
-}
-#list ol {
-  margin-top: 30px;
-}
-#list ol li {
-  text-align: left;
-  list-style: decimal;
-  margin: 10px 0px;
-}
+
 
 .button.ng-hide{
   display:none;
@@ -9851,7 +9865,7 @@ body {
         background-color: transparent !important;
         color: #f27c7d;
         line-height: normal;
-        font-size: 18px;
+        font-size: 17px;
         text-align:left;
 }
 .card.dica .item .icon:before {
@@ -9877,7 +9891,9 @@ body {
     font-weight: 100;
     width: 100%;
     font-size: 36px;
+    font-family: "Roboto";
     position: relative;
+    margin-bottom: 0;
 }
 
 .home-numbers h2 span {
@@ -9885,6 +9901,8 @@ body {
     color:#6e717a;
     display:block;
     font-weight: 100;
+    padding-top: 3px;
+    padding-left: 5px;
 }
 
 .home-numbers h2.last:before {
@@ -9996,11 +10014,11 @@ right:15px;
 .sidemenu {
     background: url(../img/img1.jpg);
     background-size: cover;
-    background-position: center top;
+    background-position: 20%  top;
 }
 
 .sidemenu .item a,.sidemenu .item {
-    background: rgba(31, 31, 31, 0.21);
+    background: rgba(31, 31, 31, 0.2);
     text-transform: uppercase;
     color: #ffffff;
     font-weight: bold;
@@ -10010,7 +10028,7 @@ right:15px;
 
 
 .sidemenu .item {
-    border-color: rgba(206, 206, 206, 0.42);
+    border-color: rgba(206, 206, 206, 0.2);
 }
 img.img-responsive {
     width: 100%;
@@ -10065,4 +10083,7 @@ img.img-responsive {
 }
 i {
     font-style: italic;
+}
+img.logo {
+    max-width: 350px;
 }

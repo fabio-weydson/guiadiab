@@ -18,7 +18,7 @@ angular.module('app.routes', [])
   })
 
   .state('registro', {
-    url: '/registro:TipoCadastro1:TipoCadastro2:TipoCadastro3',
+    url: '/registro',
     templateUrl: 'templates/registro.html',
     controller: 'registroCtrl'
   })
@@ -41,6 +41,16 @@ angular.module('app.routes', [])
     controller: 'sucessoCtrl'
   })
 
+  .state('emergencia', {
+    url: '/emergencia',
+    templateUrl: 'templates/emergencia.html'
+  })
+
+  .state('duvidas', {
+    url: '/duvidas',
+    templateUrl: 'templates/duvidas.html',
+    controller: 'duvidasCtrl'
+  })
   .state('sincronizar', {
     url: '/sincronizar',
     templateUrl: 'templates/sincronizar.html',

@@ -1,38 +1,40 @@
-<ion-view title="Registro" id="page2" class=" ">
+<ion-view title="REGISTRO DE AFERIÇÃO" id="page2" class=" ">
     <ion-content padding="true" class="manual-ios-statusbar-padding">
         <div class="">
-            <img src="img/logo.png" width="209px" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+            <img src="img/logo.png" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
         </div>
-        <div class="spacer" style="width: 283.2px; height: 22px;"></div>
-        <form id="registro-form2" class="list "  name="myForm2">
+        <div class="spacer" style="width: 283.2px; height: 30px;"></div>
+
+        <form id="registro-form2" class="list "  name="myForm2" ng-if="!resultado">
+                           <h5>Informe a data e hora do aferimento e em seguinda clique em CONTINUAR</p>
+<div class="spacer" style="width: 283.2px; height: 30px;"></div>
             <ion-list id="registro-list3" class=" ">
-                <label class="item item-input " id="registro-input3">
-                    <input type="text" required ng-model="registro.nome" uppercased placeholder="Nome Completo">
+       
+                 <label class="item item-input " id="registro-input8" style="width:50% !important;float: left;">
+                   <input type="tel" ng-click="openDatePicker()"  required ng-model="data_human"  placeholder="Data">
                 </label>
-                <label class="item item-input " id="registro-input4">
-                    <input type="email" required ng-model="registro.email"  placeholder="E-mail">
+                <label class="item item-input " id="registro-input6" style="width:25% !important;float: left;">
+                    <select required ng-model="hora" >
+                        <option>Hora</option>
+                      <option ng-repeat="horag in horas"  ng-selected="horag==horaAtual">{{horag}}</option>
+                    </select>
                 </label>
-                <ion-item class="item-divider " id="registro-list-item-divider1">Perfil</ion-item>
-                <label class="item item-input " id="registro-input8">
-                    <input type="tel" required ng-model="registro.cpf" placeholder="CPF" ui-mask="999.999.999-99"  ui-mask-placeholder ui-mask-placeholder-char="_">
+                <label class="item item-input " id="registro-input6" style="width:25% !important;float: left;">
+                      <select required ng-model="minuto"  >
+                    <option>Minutos</option>
+                      <option ng-repeat="minutog in minutos" ng-selected="minutog==minutoAtual">{{minutog}}</option>
+                    </select>
                 </label>
-                <label class="item item-input " id="registro-input7">
-                    <input  type="text" onfocus="(this.type='date')"  required ng-model="registro.data_nascimento" placeholder="Data de Nascimento">
-                </label>
-                 <label class="item item-input " id="registro-input8" style="width:30% !important;float: left;">
-                    <input type="tel" required ng-model="registro.ddd" placeholder="DDD" size="3" ui-mask="99"  ui-mask-placeholder ui-mask-placeholder-char="_">
-                </label>
-                <label class="item item-input " id="registro-input6" style="width:70% !important;float: left;">
-                    <input type="tel" required ng-model="registro.celular" placeholder="Celular" ui-mask="99999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_">
-                </label>
-                <ion-item class="item-divider " id="registro-list-item-divider9">Endereço</ion-item>
-                <label class="item item-input " id="registro-input12">
-                    <input type="tel" required ng-model="registro.cep" placeholder="CEP" ui-mask="99999-999"  ui-mask-placeholder ui-mask-placeholder-char="_">
+                <label class="item item-input " id="registro-input6" >
+                    <input type="tel" required ng-model="valor" placeholder="Valor aferido (em mmHg)" ui-mask="999mmHg"  ui-mask-placeholder ui-mask-placeholder-char="_">
                 </label>
             </ion-list>
+        <div class="spacer" style="width: 283.2px; height: 60px;"></div>
             <a ng-click="ContinuaRegistro()" id="registro-button5" class=" button button-positive  button-block "  ng-disabled="myForm2.$invalid">CONTINUAR</a>
             <a ui-sref="consultar" id="registro-button9" class=" button button-positive  button-block button-clear ">ou já Possuo Cadastro</a>
-            <span ng-bind-html="resultado"></span>
+           
         </form>
+         <h3 ng-bind-html="resultado" class="text-center"></h3>
+         <a ui-href="registros" ng-if="resultado" id="registro-button5" class=" button button-calm  button-block "  ng-disabled="myForm2.$invalid">Ver meus registros</a>
     </ion-content>
 </ion-view>

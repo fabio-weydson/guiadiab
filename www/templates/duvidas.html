@@ -1,0 +1,36 @@
+<ion-view title="Emergência" hide-nav-bar="false" id="page8" class=" ">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="spacer" style="width: 283.2px; height: 16px;"></div>
+        <div class="">
+            <img src="img/logo.png" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;" class="logo">
+        </div>
+        <div class="spacer" style="width: 100%; height: 24px;"></div>
+        <h4 class="text-center">Tem alguma dúvida sobre o Diabetes ou sobre a utilização deste aplicativo? <br/> Envie-nos uma mensagem, teremos o prazer em atendê-lo.</h4>
+        <div class="spacer" style="width: 100%; height: 24px;"></div>
+          <form id="contato-form2" class="list "  name="myForm2">
+            <ion-list id="contato-list3" class=" ">
+                <label class="item item-input " id="contato-input3">
+                    <input type="text" required ng-model="contato.nome" placeholder="Nome Completo">
+                </label>
+                <label class="item item-input " id="contato-input4">
+                    <input type="email" required ng-model="contato.email"  placeholder="E-mail">
+                </label>
+                 <label class="item item-input " id="contato-input8" style="width:30% !important;float: left;">
+                    <input type="tel" ng-model="contato.ddd" placeholder="DDD" size="3" ui-mask="99"  ui-mask-placeholder ui-mask-placeholder-char="_">
+                </label>
+                <label class="item item-input " id="contato-input6" style="width:70% !important;float: left;">
+                    <input type="tel" ng-model="contato.telefone" placeholder="Telefone" ui-mask="99999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_">
+                </label>
+                <ion-item class="item-divider " id="contato-list-item-divider9">Mensagem</ion-item>
+                <label class="item item-input " id="contato-input12">
+                    <textarea required ng-model="contato.mensagem" placeholder="Escreva sua mensagem" rows="4" maxlength="400"></textarea>
+                </label>
+            </ion-list>
+            <button ng-click="enviaContato()" id="contato-button5" class=" button button-positive  button-block "  ng-disabled="myForm2.$invalid">ENVIAR</button>
+            <span ng-bind-html="resultado"></span>
+        </form>
+        <div class="spacer" style="width: 100%; height: 50px;"></div>
+
+       
+    </ion-content>
+</ion-view>
