@@ -1,0 +1,54 @@
+
+         <ion-view view-title="Bem vindo!"  hide-nav-bar="true"   style="background:url(img/img1.jpg) no-repeat center top; background-size:auto 100%">
+        <ion-slide-box on-slide-changed="slideChanged(index)" ng-show="exibe">
+          <ion-slide>
+            <h3>Bem vindo</h3>
+
+            <div id="logo">
+              <img src="img/logo_w.png">
+            </div>
+             <p>&nbsp;&nbsp;&nbsp;</p>
+            <p style="font-size:5vw">
+              Com este aplicativo você saberá mais <br/> sobre o Diabetes  e como manter<br/> sua qualidade de vida.
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+              <button class="button button-positive "
+                  ng-click="startApp()" ng-show="!slideIndex">
+           Pula introdução
+          </button>
+           <p>&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+              <button class="button  button-clear button-block button-white"
+                  ng-click="NoShow()" ng-show="!slideIndex">
+           Não exibir mais
+          </button>
+          </ion-slide>
+          <ion-slide>
+            <h3>Com o Guia do Diabético você pode:</h3>
+            
+            <div id="list">
+              <ol>
+                <li>Se informar sobre o Diabetes</li>
+                <li>Obter dicas</li>
+                <li>Acompanhar suas medições de glicose</li>
+              </ol>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <h3>Viva com saúde!</h3>
+            <p>
+              Este aplicativo apenas fornece informações gerais sobre a patologia. <br/>
+              Sempre consulte seu médico antes de fazer mudanças em sua dieta ou atividades físicas!
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+             <p>&nbsp;&nbsp;&nbsp;</p>
+              <p>&nbsp;&nbsp;&nbsp;</p>
+            <button class="button button-positive  no-animation" ng-click="startApp()" ng-show="!slideIndex">
+           Comece a utilizar
+          </button>
+          </ion-slide>
+        </ion-slide-box>
+      </ion-view>

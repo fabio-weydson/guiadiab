@@ -1,0 +1,21 @@
+<ion-view title="Sincronizar" id="page2" class=" ">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="">
+            <img src="img/logo.png" width="209px" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div class="spacer" style="width: 283.2px; height: 22px;"></div>
+            <div class="list">
+                <ion-item class="item-divider">Aguardando sincronização</ion-item>
+                <ion-item class="item-button-right" ng-repeat="reg in registros_offline">
+                <h2 ng-bind-html="reg.nome"></h2>
+                <p>Pendente</p>
+                    <a class="button button-icon icon ion-ios-more" ng-click="show(reg.id)"></a>
+
+                </ion-item>
+            </div>
+            <a ng-click="SincronizaRegistros()" id="registro-button5" class=" button button-positive  button-block "  ng-disabled="myForm2.$invalid">SINCRONIZAR TUDO</a>
+            <a ui-sref="principal" id="registro-button9" class=" button button-positive  button-block button-clear ">Voltar para a tela inicial</a>
+            <span ng-bind-html="resultado"></span>
+    </ion-content>
+
+</ion-view>

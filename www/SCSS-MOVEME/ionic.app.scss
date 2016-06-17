@@ -1,0 +1,22 @@
+$calm: #11c1f3;
+$link-color: $calm;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.rodape {
+	position: fixed;
+	bottom: 5px;
+	margin: 0 auto;
+}
+
+.logotipo {
+	margin-top: 50px;
+}
+
+ion-view,.pane,.view {
+	background-color: #F1F4F9;
+}
+
+body {
+	color: #747474;
+}
+

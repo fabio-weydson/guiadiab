@@ -1,0 +1,35 @@
+<ion-view title="" id="page4" class=" ">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="">
+            <img src="img/logo.png" width="209px" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <form id="endereO-form5" class="list ">
+            <ion-list id="endereO-list5" data-ng-form name="myForm">
+                <ion-item class="item-divider " id="endereO-list-item-divider6">CEP Informado</ion-item>
+                <label class="item item-input " id="endereO-input18">
+                    <input type="text" placeholder="00000-000" ng-model="registro.cep"  ng-change="BuscaCEP()" required>
+                </label>
+                <ion-item class="item-divider " id="endereO-list-item-divider7">Endereço</ion-item>
+                <label class="item item-input " id="endereO-input19">
+                    <input type="text" placeholder="Endereço" uppercased ng-model="registro.endereco" uppercased required>
+                </label>
+                <label class="item item-input " id="endereO-input20">
+                    <input type="text" placeholder="Número" ng-model="registro.numero" id="end_numero" required>
+                </label>
+                <label class="item item-input " id="endereO-input21">
+                    <input type="text" placeholder="Complemento" uppercased ng-model="registro.complemento" uppercased>
+                </label>
+                <label class="item item-input " id="endereO-input22">
+                    <input type="text" placeholder="Bairro" uppercased ng-model="registro.bairro"  uppercased required>
+                </label>
+                <label class="item item-input " id="endereO-input23">
+                    <input type="text" placeholder="Cidade" uppercased ng-model="registro.cidade" uppercased required>
+                </label>
+                <label class="item item-input " id="endereO-input24">
+                    <input type="text" placeholder="UF" uppercased ng-model="registro.uf" uppercased required>
+                </label>
+            </ion-list>
+            <a ng-click="efetuaRegistro()" id="endereO-button7" class=" button button-positive  button-block " ng-disabled="myForm.$invalid">CONTINUAR</a>
+        </form>
+    </ion-content>
+</ion-view>
