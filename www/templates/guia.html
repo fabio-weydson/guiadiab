@@ -1,6 +1,6 @@
 <ion-view title="Guia do Diabético" id="page8" class=" ">
-    <ion-content padding="true" class="manual-ios-statusbar-padding">     
-     <img ng-show="txtid==6" ng-click="showImage(1)" class='img-responsive' src='http://mudandodiabetes.com.br/wp-content/uploads/2013/07/0300-interna-aplicacao.jpg'>       
-        <div id="sucesso-markdown2" style="color:#727272;text-align:left;" class="texto-guia" ng-bind-html="texto"></div>
+    <ion-content padding="true" class="manual-ios-statusbar-padding">   
+    <div  ng-show="txtid==6" class="texto-guia">  
+    	<h2>Aplicação da insulina</h2><button class="button  button-royal button-block " ng-click="showImage(1)"  ng-show="!slideIndex"><span class="icon ion-ios-body pull-left"></span> Veja o mapa de aplicação</button></div><div id="sucesso-markdown2" style="color:#727272;text-align:left;" class="texto-guia" ng-bind-html="texto"></div>
     </ion-content>
 </ion-view>

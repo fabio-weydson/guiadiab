@@ -8531,7 +8531,7 @@ progress {
   position: relative;
   display: inline-block;
   margin: 0;
-  padding: 12px 12px;
+  padding: 0px 12px;
   min-width: 52px;
   min-height: 47px;
   border-width: 1px;
@@ -8541,7 +8541,7 @@ progress {
   text-align: center;
   text-overflow: ellipsis;
   font-size: 16px;
-  /* line-height: 42px; */
+  line-height: 42px;
   cursor: pointer;
   }
   .button:hover {
@@ -8576,7 +8576,8 @@ progress {
     padding-left: .2em; }
   .button.button-block, .button.button-full {
     margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    }
   .button.button-light {
     border-color: transparent;
     background-color: #fff;
@@ -8629,8 +8630,9 @@ progress {
         color: #fff; }
   .button.button-positive {
     border-color: transparent;
-    background-color: #387ef5;
-    color: #fff; }
+    background-color: #00bab9;
+    color: #fff;
+    }
     .button.button-positive:hover {
       color: #fff;
       text-decoration: none; }
@@ -8760,7 +8762,9 @@ progress {
     }
     .button.button-royal:hover {
       color: #fff;
-      text-decoration: none; }
+      text-decoration: none;
+      background: #e27676;
+      }
     .button.button-royal.active, .button.button-royal.activated {
       background-color: #6b46e5; }
     .button.button-royal.button-clear {
@@ -9972,11 +9976,12 @@ right:15px;
 }
 .texto-guia {
     font-size: 1.1em;
-    line-height: 1.4em;
+    /* line-height: 1.4em; */
     text-align: left;
     font-family: "Arial";
     white-space: pre-line;
     text-align: left;
+    text-align: justify !important;
 }
 .texto-guia ul li:before {
     content: "•"; /* Insert content that looks like bullets */
@@ -10017,19 +10022,22 @@ img.img-responsive {
 .image-modal {
   width: 100% !important;
   height: 100%;
-  top: 0 !important;
+  top: 58px !important;
   left: 0 !important;
+  text-align: center;
+  /* position: relative; */
 }
 .fullscreen-image {
-  max-width: 100%;
+  /* max-width: 100%; */
   max-height: 100%;
   bottom: 0;
   left: 0;
   margin: auto;
   overflow: auto;
-  position: fixed;
+  /* position: fixed; */
   right: 0;
   top: 0;
+  text-align: center;
 }
 
 /* Fix modal backdrop for smaller devices */

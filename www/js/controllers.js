@@ -366,7 +366,7 @@ $scope.dica = $scope.dicas[0];
    
 .controller('introCtrl', function($scope, $stateParams, $state,$ionicHistory) {
     $scope.NoShow = function(){
-    localStorage.setItem('recurring',1);
+    localStorage.setItem('recurrings',1);
     $state.go('principal');
   }
 
@@ -374,7 +374,7 @@ $scope.dica = $scope.dicas[0];
   $scope.startApp = function() {
     $state.go('principal');
   };
-  $scope.recurring = localStorage.getItem('recurring');
+  $scope.recurring = localStorage.getItem('recurrings');
   $scope.exibe = false;
   if($scope.recurring==1) {
      $scope.startApp();
@@ -424,7 +424,7 @@ $scope.dica = $scope.dicas[0];
       $scope.modal.hide();
     };
    $scope.showImage = function(index) {
-      $scope.imageSrc = 'http://mudandodiabetes.com.br/wp-content/uploads/2013/07/0300-interna-aplicacao.jpg';
+      $scope.imageSrc = 'http://helloradio.com.br/apps/diabetes/img/aplicacao.jpg';
       $scope.openModal();
     }
   
