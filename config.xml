@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget 
   id="com.guiadodiabetico.app" 
-  version="0.2" 
+  version="0.3" 
   xmlns:gap="http://phonegap.com/ns/1.0"
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns="http://www.w3.org/ns/widgets" 
@@ -9,7 +9,7 @@
 >
   <name>Guia do Diabético</name>
   <description>
-        New app
+        New app 
     </description>
   <author email="fabioweydson@gmail.com" href="http://helloradio.com.br/">
       Fábio Weydson

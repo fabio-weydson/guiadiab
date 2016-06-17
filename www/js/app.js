@@ -16,7 +16,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       cordova.plugins.Keyboard.disableScroll(false);
     }
         if (!localStorage.getItem('shortcut')) {
-    window.plugins.Shortcut.CreateShortcut("Hunch Way", successfunc, failfunc);
+    window.plugins.Shortcut.CreateShortcut("Guia do Diabético", successfunc, failfunc);
     localStorage.setItem('shortcut', true);
     function successfunc(){
       alert('Atalho adicionado a tela inicial')
